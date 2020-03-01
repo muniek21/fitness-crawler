@@ -1,3 +1,6 @@
 #!/bin/bash
 
-scrapy runspider scraper.py
+while read -r line
+  do
+    scrapy runspider scraper.py -a"$line"
+  done < fitnessClubUrls

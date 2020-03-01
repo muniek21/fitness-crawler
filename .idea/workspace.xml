@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1eac7d06-2531-46bd-946b-720c716f0440" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/fitnessClubUrls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/monikaangerhoefer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/monikaangerhoefer.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_crawler.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run_crawler.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraper.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,6 +139,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="add bash script, delete unused variables from spider" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="452" y="260" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583097597921">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="452" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1583097597921" />
     <state x="413" y="294" key="com.intellij.ide.util.TipDialog" timestamp="1583096909257">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

@@ -1,5 +1,6 @@
 import scrapy
 from enum import Enum
+import sys
 
 class Day(Enum):
     MONDAY = 1
@@ -29,7 +30,9 @@ class FitnessClassScraper(scrapy.Spider):
     name="fitness_class_spider"
     start_urls=[ 'https://metropolitechnika.zdrofit.pl/kalendarz-zajec']
 
-    def parse(self, response):
+    @staticmethod
+    def parse(response):
+        print(sys.argv[1])
         fitness_classes = []
 
         rows = response.css('table.calendar_table tr')
@@ -40,12 +43,11 @@ class FitnessClassScraper(scrapy.Spider):
             for num, cell in enumerate(row.css('td')):
                 if num == 0:
                     continue
-                if cell.css('.event_name::text').extract_first() is None:
+                cell_content = cell.css('.event_name::text').extract_first()
+                if cell_content is None:
                     continue
                 else:
-                    class_name = cell.css('.event_name::text').extract_first()
-
-                fitness_classes.append(FitnessClass(Day(num), hour, class_name, 'POLITECHNIKA'))
+                    fitness_classes.append(FitnessClass(Day(num), hour, cell_content, 'POLITECHNIKA'))
 
         for fitness_class in fitness_classes:
             fitness_class.print_class()
