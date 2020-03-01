@@ -48,11 +48,9 @@ class FitnessClassScraper(scrapy.Spider):
             hour = row.css('.hour ::text').extract_first().strip()
 
             for num, cell in enumerate(row.css('td')):
-                class_name = ''
                 if num == 0:
                     continue
                 if (cell.css('.event_name::text').extract_first() is None):
-                    # class_name = 'NO_CLASS'
                     continue
                 else:
                     class_name = cell.css('.event_name::text').extract_first()
