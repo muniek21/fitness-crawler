@@ -4,21 +4,11 @@ from enum import Enum
 class Day(Enum):
     MONDAY = 1
     TUESDAY = 2
-    WEDENSDAY = 3
+    WEDNESDAY = 3
     THURSDAY = 4
     FRIDAY = 5 
     SATURDAY = 6
     SUNDAY = 7
-
-class FitnessClub(Enum):
-    POLITECHNIKA = 1
-    GALERIA_MOKOTOW = 2
-    MARYNARSKA = 3
-    KONSTRUTKTORSKA = 4
-    METRO_WILANOWSKA = 5
-    EUROPLEX = 6
-    PLAC_UNII = 7
-    ALEJE_JEROZOLIMSKIE = 8
 
 class FitnessClass:
     day = Day.MONDAY
@@ -32,7 +22,7 @@ class FitnessClass:
         self.name = name
         self.place = place
     
-    def printClass(self): 
+    def print_class(self):
         print(self.name + " " + self.day.name + " " + self.hour + " " + self.place)
 
 class FitnessClassScraper(scrapy.Spider):
@@ -50,15 +40,15 @@ class FitnessClassScraper(scrapy.Spider):
             for num, cell in enumerate(row.css('td')):
                 if num == 0:
                     continue
-                if (cell.css('.event_name::text').extract_first() is None):
+                if cell.css('.event_name::text').extract_first() is None:
                     continue
                 else:
                     class_name = cell.css('.event_name::text').extract_first()
 
-                fitness_classes.append(FitnessClass(Day(num), hour, class_name, FitnessClub.POLITECHNIKA.name))    
+                fitness_classes.append(FitnessClass(Day(num), hour, class_name, 'POLITECHNIKA'))
 
         for fitness_class in fitness_classes:
-            fitness_class.printClass()       
+            fitness_class.print_class()
        
 
 
