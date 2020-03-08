@@ -28,11 +28,18 @@ class FitnessClass:
 
 class FitnessClassScraper(scrapy.Spider):
     name="fitness_class_spider"
-    start_urls=[ 'https://metropolitechnika.zdrofit.pl/kalendarz-zajec']
 
-    @staticmethod
-    def parse(response):
-        print(sys.argv[1])
+    def __init__(self, fitness_club=None, *args, **kwargs):
+        super(FitnessClassScraper, self).__init__(*args, **kwargs)
+        self.club = fitness_club.split()[0]
+        self.start_urls = [ fitness_club.split()[1] ]
+
+    # start_urls=[ 'https://metropolitechnika.zdrofit.pl/kalendarz-zajec']
+
+    def parse(self, response):
+        print("MONIAAAAAA")
+        print(self.club)
+
         fitness_classes = []
 
         rows = response.css('table.calendar_table tr')
@@ -47,11 +54,11 @@ class FitnessClassScraper(scrapy.Spider):
                 if cell_content is None:
                     continue
                 else:
-                    fitness_classes.append(FitnessClass(Day(num), hour, cell_content, 'POLITECHNIKA'))
+                    fitness_classes.append(FitnessClass(Day(num), hour, cell_content, self.club))
 
         for fitness_class in fitness_classes:
             fitness_class.print_class()
-       
+
 
 
 

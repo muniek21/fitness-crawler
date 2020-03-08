@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while read -r line
+while read line
   do
-    scrapy runspider scraper.py -a"$line"
+    scrapy runspider scraper.py -a fitness_club="$line"
   done < fitnessClubUrls
