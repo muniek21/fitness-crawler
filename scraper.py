@@ -1,6 +1,7 @@
 import scrapy
 from enum import Enum
 from datetime import datetime, timedelta
+import sqlite3
 
 
 class Day(Enum):
@@ -47,6 +48,11 @@ class FitnessClassScraper(scrapy.Spider):
         monday = sunday - timedelta(6)
         rows = response.css('table.calendar_table tr')
 
+        connection = sqlite3.connect(':memory:')
+        cursor = connection.cursor()
+
+        cursor.execute('create table fitness_classes (day varchar(20), hour varchar(10), name varchar(50), place varchar(40), date varchar(10))')
+
         for row in rows[1:]:
             if row.css('.hour ::text').extract_first() is None:
                 continue
@@ -64,4 +70,8 @@ class FitnessClassScraper(scrapy.Spider):
                     fitness_classes.append(FitnessClass(Day(num), hour, cell_content, self.club, date.date()))
 
         for fitness_class in fitness_classes:
-            fitness_class.print_class()
+            cursor.execute('insert into fitness_classes values(?, ?, ?, ?, ?)', (fitness_class.day.name, fitness_class.hour, fitness_class.name, fitness_class.place, fitness_class.date))
+            # fitness_class.print_class()
+
+        cursor.execute('select * from fitness_classes')
+        print(cursor.fetchall())
