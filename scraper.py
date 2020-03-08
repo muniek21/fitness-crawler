@@ -34,17 +34,15 @@ class FitnessClassScraper(scrapy.Spider):
         self.club = fitness_club.split()[0]
         self.start_urls = [ fitness_club.split()[1] ]
 
-    # start_urls=[ 'https://metropolitechnika.zdrofit.pl/kalendarz-zajec']
-
     def parse(self, response):
-        print("MONIAAAAAA")
-        print(self.club)
-
         fitness_classes = []
 
         rows = response.css('table.calendar_table tr')
 
         for row in rows[1:]:
+            if row.css('.hour ::text').extract_first() is None:
+                continue
+
             hour = row.css('.hour ::text').extract_first().strip()
 
             for num, cell in enumerate(row.css('td')):
