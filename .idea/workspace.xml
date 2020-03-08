@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1eac7d06-2531-46bd-946b-720c716f0440" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/fitnessClubUrls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/monikaangerhoefer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/monikaangerhoefer.xml" afterDir="false" />
+    <list default="true" id="1eac7d06-2531-46bd-946b-720c716f0440" name="Default" comment="add urls">
+      <change beforePath="$PROJECT_DIR$/.idea/fitness_class_crawler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fitness_class_crawler.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fitnessClubUrls" beforeDir="false" afterPath="$PROJECT_DIR$/fitnessClubUrls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run_crawler.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run_crawler.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraper.py" afterDir="false" />
     </list>
@@ -28,8 +28,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -131,18 +132,54 @@
       <option name="project" value="LOCAL" />
       <updated>1583096651071</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add urls">
+      <created>1583098953518</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1583098953518</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add bash script">
+      <created>1583655873774</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1583655873774</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add all club urls">
+      <created>1583657481018</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1583657481018</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add bash script, delete unused variables from spider" />
-    <option name="LAST_COMMIT_MESSAGE" value="add bash script, delete unused variables from spider" />
+    <MESSAGE value="add urls" />
+    <MESSAGE value="add bash script" />
+    <MESSAGE value="add all club urls" />
+    <option name="LAST_COMMIT_MESSAGE" value="add all club urls" />
   </component>
   <component name="WindowStateProjectService">
     <state x="452" y="260" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583097597921">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="452" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1583097597921" />
+    <state x="309" y="52" key="CommitChangelistDialog2" timestamp="1583657480859">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="309" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1583657480859" />
+    <state x="229" y="89" key="SettingsEditor" timestamp="1583670058547">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1583670058547" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1583657482689">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1583657482689" />
     <state x="413" y="294" key="com.intellij.ide.util.TipDialog" timestamp="1583096909257">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
