@@ -3,6 +3,7 @@ from enum import Enum
 from datetime import datetime, timedelta
 import sqlite3
 
+from zdrofit_class import ZdrofitClass
 
 class Day(Enum):
     MONDAY = 1
@@ -13,34 +14,22 @@ class Day(Enum):
     SATURDAY = 6
     SUNDAY = 7
 
-
-class FitnessClass:
-    day = Day.MONDAY
-    hour = ''
-    name = ''
-    place = ''
-    date = ''
-
-    def __init__(self, day, hour, name, place, date):
-        self.day = day
-        self.hour = hour
-        self.name = name
-        self.place = place
-        self.date = date
-
-    def print_class(self):
-        print(self.name + " " + self.day.name + " " + self.hour + " " + self.place + " " + str(self.date))
-
-
 class FitnessClassScraper(scrapy.Spider):
     name = "fitness_class_spider"
 
     def __init__(self, fitness_club=None, *args, **kwargs):
         super(FitnessClassScraper, self).__init__(*args, **kwargs)
-        self.club = fitness_club.split()[0]
-        self.start_urls = [fitness_club.split()[1]]
+        self.club_id = fitness_club.split(',')[0]
+        self.club = fitness_club.split(',')[1]
+        self.start_urls = [fitness_club.split(',')[2]]
 
     def parse(self, response):
+        sqlLiteConnection = sqlite3.connect(
+            '/Users/monikaangerhoefer/Documents/python-projects/django-test/zdrofit/db.sqlite3')
+        cursor = sqlLiteConnection.cursor()
+        cursor.execute("select max(id) from grafik_class")
+        max_class_id = cursor.fetchone()[0]
+
         fitness_classes = []
 
         end_of_the_week = response.css('.week_chooser span::text').extract_first().split('do')[1].strip()
@@ -62,7 +51,18 @@ class FitnessClassScraper(scrapy.Spider):
                     continue
                 else:
                     date = monday + timedelta(num - 1)
-                    fitness_classes.append(FitnessClass(Day(num), hour, cell_content, self.club, date.date()))
+                    fitness_classes.append(ZdrofitClass(Day(num), hour, cell_content, self.club_id, date.date()))
 
         for fitness_class in fitness_classes:
+            max_class_id += 1
             fitness_class.print_class()
+            cursor.execute('INSERT INTO grafik_class VALUES(?, ?, ?, ?, ?, ?)', (max_class_id, fitness_class.day, fitness_class.hour, fitness_class.name, fitness_class.date, fitness_class.place))
+
+        print("MONIA")
+        print(max_class_id)
+        cursor.execute(
+            'INSERT INTO grafik_class VALUES(?, ?, ?, ?, ?, ?)',
+            (max_class_id + 1, 'test_day', 'test_hour', 'test_name', datetime.now(), self.club_id))
+        sqlLiteConnection.commit()
+
+        sqlLiteConnection.close()
