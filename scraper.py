@@ -57,12 +57,6 @@ class FitnessClassScraper(scrapy.Spider):
             max_class_id += 1
             fitness_class.print_class()
             cursor.execute('INSERT INTO grafik_class VALUES(?, ?, ?, ?, ?, ?)', (max_class_id, fitness_class.day, fitness_class.hour, fitness_class.name, fitness_class.date, fitness_class.place))
-
-        print("MONIA")
-        print(max_class_id)
-        cursor.execute(
-            'INSERT INTO grafik_class VALUES(?, ?, ?, ?, ?, ?)',
-            (max_class_id + 1, 'test_day', 'test_hour', 'test_name', datetime.now(), self.club_id))
-        sqlLiteConnection.commit()
+            sqlLiteConnection.commit()
 
         sqlLiteConnection.close()
