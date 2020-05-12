@@ -5,6 +5,7 @@ import sqlite3
 
 from zdrofit_class import ZdrofitClass
 
+
 class Day(Enum):
     MONDAY = 1
     TUESDAY = 2
@@ -13,6 +14,7 @@ class Day(Enum):
     FRIDAY = 5
     SATURDAY = 6
     SUNDAY = 7
+
 
 class FitnessClassScraper(scrapy.Spider):
     name = "fitness_class_spider"
@@ -24,9 +26,9 @@ class FitnessClassScraper(scrapy.Spider):
         self.start_urls = [fitness_club.split(',')[2]]
 
     def parse(self, response):
-        sqlLiteConnection = sqlite3.connect(
+        sql_lite_connection = sqlite3.connect(
             '/Users/monikaangerhoefer/Documents/python-projects/django-test/zdrofit/db.sqlite3')
-        cursor = sqlLiteConnection.cursor()
+        cursor = sql_lite_connection.cursor()
         cursor.execute("select max(id) from grafik_class")
         max_class_id = cursor.fetchone()[0]
 
@@ -56,7 +58,9 @@ class FitnessClassScraper(scrapy.Spider):
         for fitness_class in fitness_classes:
             max_class_id += 1
             fitness_class.print_class()
-            cursor.execute('INSERT INTO grafik_class VALUES(?, ?, ?, ?, ?, ?)', (max_class_id, fitness_class.day, fitness_class.hour, fitness_class.name, fitness_class.date, fitness_class.place))
-            sqlLiteConnection.commit()
+            cursor.execute('INSERT INTO grafik_class VALUES(?, ?, ?, ?, ?, ?)', (
+                max_class_id, fitness_class.day, fitness_class.hour, fitness_class.name, fitness_class.date,
+                fitness_class.place))
+            sql_lite_connection.commit()
 
-        sqlLiteConnection.close()
+        sql_lite_connection.close()
