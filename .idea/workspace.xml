@@ -4,9 +4,8 @@
     <list default="true" id="1eac7d06-2531-46bd-946b-720c716f0440" name="Default" comment="add urls">
       <change beforePath="$PROJECT_DIR$/.idea/fitness_class_crawler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fitness_class_crawler.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessClubUrls" beforeDir="false" afterPath="$PROJECT_DIR$/fitnessClubUrls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_crawler.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run_crawler.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zdrofit_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/zdrofit_class.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +19,10 @@
     <option name="externalProjectsViewState">
       <projects_view />
     </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectId" id="1YXlcegThpa7IElRL9ccZMalvzy" />
   <component name="ProjectViewState">
@@ -153,36 +156,78 @@
       <option name="project" value="LOCAL" />
       <updated>1583657481018</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add date to FitnessClass">
+      <created>1583670996201</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1583670996201</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add sqlite">
+      <created>1583690236672</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1583690236672</updated>
+    </task>
+    <task id="LOCAL-00007" summary="delete db cursors">
+      <created>1586083836125</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1586083836125</updated>
+    </task>
+    <task id="LOCAL-00008" summary="save to database">
+      <created>1586456773327</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1586456773327</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add urls">
+      <created>1586456799853</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1586456799853</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fix formatting">
+      <created>1589303566958</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1589303566958</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add bash script, delete unused variables from spider" />
-    <MESSAGE value="add urls" />
     <MESSAGE value="add bash script" />
     <MESSAGE value="add all club urls" />
-    <option name="LAST_COMMIT_MESSAGE" value="add all club urls" />
+    <MESSAGE value="add date to FitnessClass" />
+    <MESSAGE value="add sqlite" />
+    <MESSAGE value="delete db cursors" />
+    <MESSAGE value="save to database" />
+    <MESSAGE value="add urls" />
+    <MESSAGE value="fix formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix formatting" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="452" y="260" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583097597921">
+    <state x="413" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1601364103477">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="452" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1583097597921" />
-    <state x="309" y="52" key="CommitChangelistDialog2" timestamp="1583657480859">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="309" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1583657480859" />
-    <state x="229" y="89" key="SettingsEditor" timestamp="1583670058547">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1583670058547" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1583657482689">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1583657482689" />
-    <state x="413" y="294" key="com.intellij.ide.util.TipDialog" timestamp="1583096909257">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state x="413" y="294" key="com.intellij.ide.util.TipDialog/0.23.1440.877@0.23.1440.877" timestamp="1583096909257" />
+    <state x="413" y="282" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1601364103477" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scraper.py</url>
+          <line>62</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

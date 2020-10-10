@@ -49,18 +49,21 @@ class FitnessClassScraper(scrapy.Spider):
                 if num == 0:
                     continue
                 cell_content = cell.css('.event_name::text').extract_first()
+                instructor = cell.css('.instructor::text').extract_first()
+                if instructor is None:
+                    continue
                 if cell_content is None:
                     continue
                 else:
                     date = monday + timedelta(num - 1)
-                    fitness_classes.append(ZdrofitClass(Day(num), hour, cell_content, self.club_id, date.date()))
+                    fitness_classes.append(ZdrofitClass(Day(num), hour, cell_content, self.club_id, date.date(), instructor))
 
         for fitness_class in fitness_classes:
             max_class_id += 1
             fitness_class.print_class()
-            cursor.execute('INSERT INTO grafik_class VALUES(?, ?, ?, ?, ?, ?)', (
-                max_class_id, fitness_class.day, fitness_class.hour, fitness_class.name, fitness_class.date,
-                fitness_class.place))
+            cursor.execute('INSERT INTO grafik_class VALUES(?, ?, ?, ?, ?, ?, ?)', (
+                max_class_id, fitness_class.day.name, fitness_class.hour, fitness_class.name, fitness_class.date,
+                fitness_class.place, fitness_class.instructor))
             sql_lite_connection.commit()
 
         sql_lite_connection.close()
